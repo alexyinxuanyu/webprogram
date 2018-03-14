@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.xzit.vo.position">
+
+    <class name="position" table="position" >
+        <id name="position_id" column="position_id">
+            <generator class="native"/>
+        </id>
+        <property name="position_name" column="position_name"/>
+        <property name="position_type" column="position_type"/>
+        <property name="position_number" column="position_number"/>
+        <property name="position_vacation" column="position_vacation"/>
+		<set name="emp">
+			<key column="position_id"></key>
+			<one-to-many  class="com.xzit.vo.staff.staff"/>
+		</set>
+		<set name="we">
+			<key column="position_id"></key>
+			<one-to-many  class="com.xzit.vo.leave.leave"/>
+		</set>
+		<set name="ew">
+			<key column="position_id"></key>
+			<one-to-many  class="com.xzit.vo.entry.entry"/>
+		</set>
+    </class>
+
+</hibernate-mapping>
+        

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+<package name="employee" namespace="/employee" extends="struts-default">
+    	<action name="*_*" class="com.xzit.action.entry.{1}Action">
+			<result>
+				/show.jsp
+			</result>
+			<result name="error">
+				/index.jsp
+			</result>
+			<result name="bydeid">
+				/show.jsp
+			</result>
+			<result name="bypoid">
+				/show.jsp
+			</result>
+			<result name="toAdd">
+				/addemp.jsp
+			</result>
+			<result name="doAdd">
+				/show.jsp
+			</result>
+			<result name="byemid">
+				/show.jsp
+			</result>
+			<result name="toUpdate">
+				/update.jsp
+			</result>
+		</action>
+    </package> 
+ <package name="user" namespace="/user" extends="struts-default">
+  	<!-- 
+  	<interceptors>
+    	<interceptor name="check" class="com.neusoft.interceptor.TestInterceptor"></interceptor>
+    	<interceptor name="first" class="com.neusoft.interceptor.UserInterceptor"></interceptor>
+    </interceptors>  
+    -->      
+        <action name="*_*" class="com.xzit.action.user.{1}Action"  method="to{2}">
+            <result name="success">
+            /homepage.jsp
+            </result>
+             <result name="doAdd">
+            /login.jsp
+            </result>
+            <result name="error">
+            /login.jsp
+            </result>
+            
+            <!-- 
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <interceptor-ref name="check"></interceptor-ref>
+            <interceptor-ref name="first"></interceptor-ref>
+             -->
+            
+        </action>
+       
+ </package>
+  <package name="position" namespace="/position" extends="struts-default">
+ 	 	 
+ 	 	 <action name="positionManager" class="com.xzit.action.position.PositionAction">
+            <result name="success">
+            /positionManager.jsp
+            </result>          
+        </action>
+         <action name="Position_addPosition" class="com.xzit.action.position.PositionAction">
+            <result name="toAdd">
+            /addPosition.jsp
+            </result>
+ 
+            <result name="success">
+            /positionManager.jsp
+            </result>         
+        </action>
+        <action name="Position_deletePosition" class="com.xzit.action.position.PositionAction">
+            <result>
+            /positionManager.jsp
+            </result>          
+        </action>
+        <action name="Position_Update" class="com.xzit.action.position.PositionAction">
+            <result name="success">
+            /positionManager.jsp
+            </result>  
+            <result name="update1">
+            /updatePosition.jsp
+            </result>   
+        </action>
+        
+        <action name="PositionfindbyId" class="com.xzit.action.position.PositionAction">
+            <result name="success">
+            /positionManager.jsp
+            </result>          
+        </action>
+        <action name="PositionfindbyName" class="com.xzit.action.position.PositionAction">
+            <result name="success">
+            /positionManager.jsp
+            </result>          
+        </action>
+        <action name="PositionfindbyType" class="com.xzit.action.position.PositionAction">
+            <result name="success">
+            /positionManager.jsp
+            </result>          
+        </action>
+       
+       <action name="Positionfindbypage" class="com.xzit.action.position.PositionAction">
+            <result name="success">
+            /positionManager.jsp
+            </result>          
+        </action>
+ </package>
+ <package name="section" namespace="/section" extends="struts-default">
+        <action name="sectionManager" class="com.xzit.action.section.SectionAction">
+            <result>
+            /sectionManager.jsp
+            </result>
+        </action>
+        <action name="Section_addSection" class="com.xzit.action.section.SectionAction">
+         <result name="toAdd">
+            /addSection.jsp
+            </result>     
+            <result>
+            /sectionManager.jsp
+            </result>          
+        </action>
+        <action name="Section_deleteSection" class="com.xzit.action.section.SectionAction">
+            <result>
+            /sectionManager.jsp
+            </result>          
+        </action>
+        <action name="Section_Update" class="com.xzit.action.section.SectionAction">
+            <result name="success">
+            /sectionManager.jsp
+            </result>             
+             <result name="update1">
+             /updateSection.jsp
+            </result>               
+        </action>
+        
+        <action name="sectionfindbyId" class="com.xzit.action.section.SectionAction">
+            <result name="success">
+            /sectionManager.jsp
+            </result>          
+        </action>
+        <action name="sectionfindbyName" class="com.xzit.action.section.SectionAction">
+            <result name="success">
+            /sectionManager.jsp
+            </result>          
+        </action>
+    </package>
+ <package name="leave" namespace="/leave" extends="struts-default">
+    	<action name="*_*" class="com.xzit.action.leave.{1}Action">
+			<result>
+				/leave.jsp
+			</result>
+			<result name="error">
+				/index.jsp
+			</result>
+			<result name="bydeid">
+				/leave.jsp
+			</result>
+			<result name="bypoid">
+				/leave.jsp
+			</result>
+			<result name="toAdd">
+				/addleave.jsp
+			</result>
+			<result name="doAdd">
+				/leave.jsp
+			</result>
+			<result name="bystid">
+				/leave.jsp
+			</result>
+			<result name="toUpdate">
+				/updateleave.jsp
+			</result>
+		</action>
+    </package> 
+</struts>

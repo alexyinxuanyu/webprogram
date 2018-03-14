@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.xzit.vo.leave">
+
+    <class name="leave" table="leave">
+        <id name="staff_id" column="staff_id">
+            <generator class="native"/>
+        </id>
+        <property name="staff_name" column="staff_name"/>
+        <many-to-one name="position" column="position_id" class="com.xzit.vo.position.position"></many-to-one>
+         <many-to-one name="section" column="section_id" class="com.xzit.vo.section.Section"></many-to-one>
+		<!-- <property name="staff_section" column="staff_section"/>
+		<property name="staff_position" column="staff_position"/> -->
+		<property name="staff_leaveapplytime" column="staff_leaveapplytime"/>
+		<property name="staff_leavecondition" column="staff_leavecondition"/>
+		<property name="staff_leavecomplytime" column="staff_leavecomplytime"/>
+       
+    </class>
+
+</hibernate-mapping>

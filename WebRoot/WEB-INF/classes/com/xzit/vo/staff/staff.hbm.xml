@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.xzit.vo.staff">
+
+    <class name="staff" table="staff">
+        <id name="staff_id" column="staff_id">
+        <generator class="native"/>
+        </id>
+        <property name="staff_name"></property>
+      <!--  <property name="staff_section"></property>
+         <property name="staff_position"></property> -->
+         <many-to-one name="position" column="position_id" class="com.xzit.vo.position.position"></many-to-one>
+         <many-to-one name="section" column="section_id" class="com.xzit.vo.section.Section"></many-to-one>
+        <property name="staff_birthday"></property>
+        <property name="staff_gender"></property>
+        <property name="staff_seniority"></property>
+        <property name="staff_education"></property>
+        <property name="staff_height"></property>
+        <property name="staff_blood"></property>
+        <property name="staff_national"></property>
+        <property name="staff_mail"></property>
+        <property name="staff_phone"></property>
+        <property name="staff_native"></property>
+        <property name="staff_idcard"></property>
+        <property name="staff_condition"></property>
+        <property name="Staff_source"></property>
+    </class>
+
+</hibernate-mapping>
